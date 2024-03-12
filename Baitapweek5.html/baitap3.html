@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cổng thông tin sinh viên</title>
+    <link rel="icon" type="image/png" href="https://s.net.vn/spll"> 
+    <style type="text/css">
+.ProductDetails {display: none;}
+.Hososinhvien img {
+    width: 150px;
+    height: 200px;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px #aaa;
+    margin-top: 20px;
+}
+.StudentName{font-weight: bold;}
+.StudentID {font-style: italic;}
+/* .StudentID::before{content: "-";} */
+.Hososinhvien{
+    text-align: center;
+    width: 150px;
+    margin: 0px 20px;
+    float: left;
+    cursor: pointer;
+}
+.Hososinhvien:hover .ProductDetails {display: block;}
+.Hososinhvien {
+        transition: transform 0.5s ease-in-out;
+        transform: scale(1);
+    }
+
+    .Hososinhvien:hover {
+        transform: scale(1.1); 
+    }
+    </style>
+</head>
+<body>
+   <div>
+    <div class="Hososinhvien">
+        <img src="https://s.net.vn/x2zZ" alt="Pham Duc Hung" title="Phạm Đức Hùng">
+        <div class="ProductDetails">
+            <span class="StudentName">Phạm Đức Hùng</span>
+            <span class="StudentID">23070241</span>
+        </div>
+    </div>
+    <div class="Hososinhvien">
+        <img src="https://s.net.vn/hKkf" alt="Nguyen Manh Quan" title="Nguyễn Mạnh Quân">
+        <div class="ProductDetails">
+            <span class="StudentName">Nguyễn Mạnh Quân</span>
+            <span class="StudentID">23070197</span>
+        </div>
+    </div>
+    <div class="Hososinhvien">
+        <img src="https://s.net.vn/qJrc" alt="Bui Anh Minh" title="Bùi Anh Minh">
+        <div class="ProductDetails">
+            <span class="StudentName">Bùi Anh Minh</span>
+            <span class="StudentID">23070219</span>
+        </div>
+    </div>
+    <div class="Hososinhvien">
+        <img src="https://s.net.vn/lQHl" alt="Nguyen Quang Phuc" title="Nguyễn Quang Phúc">
+        <div class="ProductDetails">
+            <span class="StudentName">Nguyễn Quang Phúc</span>
+            <span class="StudentID">23070309</span>
+        </div>
+    </div>
+   </div>
+</body>
+</html>
