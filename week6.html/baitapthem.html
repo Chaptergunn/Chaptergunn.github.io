@@ -1,0 +1,57 @@
+<H1>BÀI TẠP PHẦN A</H1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hình Chữ Nhật</title>
+</head>
+<body>
+    <h2>Tính Chu Vi và Diện Tích Hình Chữ Nhật</h2>
+    <label for="length">Chiều dài:</label>
+    <input type="number" id="length" value="0">
+    <label for="width">Chiều rộng:</label>
+    <input type="number" id="width" value="0">
+    <button onclick="calculateRectangle()">Tính Toán</button>
+    <p id="rectangleResult"></p>
+
+    <script>
+        function calculateRectangle() {
+            var length = document.getElementById('length').value;
+            var width = document.getElementById('width').value;
+
+            var perimeter = 2 * (parseFloat(length) + parseFloat(width));
+            var area = parseFloat(length) * parseFloat(width);
+
+            document.getElementById('rectangleResult').innerHTML = 'Chu vi: ' + perimeter + '<br>Diện tích: ' + area;
+            // Xóa giá trị sau khi tính toán
+            document.getElementById('length').value = '';
+            document.getElementById('width').value = '';  
+        }
+    </script>
+</body>
+</html>
+<br>
+<h2>BÀI TẠP PHẦN B</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hình Tròn</title>
+</head>
+<body>
+    <h2>Tính Chu Vi và Diện Tích Hình Tròn</h2>
+    <label for="radius">Bán kính:</label>
+    <input type="number" id="radius" value="0">
+    <button onclick="calculateCircle()">Tính Toán</button>
+    <p id="circleResult"></p>
+
+    <script>
+        function calculateCircle() {
+            var radius = document.getElementById('radius').value;
+            var pi = 3.14;
+            var circumference = 2 * pi * parseFloat(radius);
+            var area = pi * parseFloat(radius) * parseFloat(radius);
+
+            document.getElementById('circleResult').innerHTML = 'Chu vi: ' + circumference + '<br>Diện tích: ' + area;
+        }
+    </script>
+</body>
+</html>

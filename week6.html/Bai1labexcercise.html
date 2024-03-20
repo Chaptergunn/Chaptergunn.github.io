@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tính tổng</title>
+<style>
+    /* CSS để trang trí
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .calculator {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    } */
+    button {
+        /* width: 100%; */
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        /* Con trỏ chuột hiển thị dưới dạng ngón tay */
+        cursor: pointer;
+    }
+       /* Trỏ chuột là đổi màu */
+    button:hover {
+        background-color: #3010bd;
+    }
+</style>
+</head>
+<body>
+
+<div class="calculator">
+    <!-- Label: Nhãn để mô tả ý nghĩa của phần tử -->
+    <label for="num1">Nhập số thứ nhất:</label>
+    <input type="number" id="num1" placeholder="Nhập số thứ nhất" min="1" max="100" oninput="checkLimit(this)" >
+    <br>
+    <label for="num2">Nhập số thứ hai:</label>
+    <input type="number" id="num2" placeholder="Nhập số thứ hai" min="1" max="100" oninput="checkLimit(this)" >
+    <!-- readonly: được thêm vào ô nhập số để ngăn người dùng tăng giảm giá trị bằng cách điều hướng -->
+    <br>
+    <button onclick="calculate()">Tính tổng</button>
+    <br>
+    <label for="result">Kết quả:</label>
+    <!-- <p id="result"></p> -->
+    <br>
+    <span id="result"></span>
+</div>
+
+<script>
+    function calculate() {
+            // Lấy giá trị của 2 ô đã nhấp số
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var num2 = parseFloat(document.getElementById('num2').value);
+            // Kiểm tra xem 2 ô đã được nhập chưa
+        if (isNaN(num1) || isNaN(num2)) {
+            //  Nếu chưa nhập đúng số, thông báo lỗi đến người dùng
+            document.getElementById('result').innerText = 'Vui lòng nhập đúng số.';
+            // Nếu cả hai ô đều chứa sô, tính tổng và thực hiện phép toán
+        } else {
+            var sum = num1 + num2;
+            document.getElementById('result').innerText = 'Tổng: ' + sum;
+             // Xóa giá trị của 2 ô sau khi đã hoàn thành phép toán
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';    
+        }
+    }
+    // Giá trị nhập vào phải nằm trong khoảng Min-Max
+    function checkLimit(input) {
+        var value = parseFloat(input.value);
+        var min = parseFloat(input.min);
+        var max = parseFloat(input.max);
+        
+        if (isNaN(value) || value < min || value > max) {
+            alert('Giá trị phải nằm trong khoảng từ ' + min + ' đến ' + max);
+            input.value = '';
+        }
+    }
+</script>
+</body>
+</html>
