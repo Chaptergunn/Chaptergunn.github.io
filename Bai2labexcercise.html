@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tính tổng</title>
+</head>
+<body>
+
+<div class="calculator">
+    <!-- Sử dụng document.write() để hiển thị nhãn -->
+    <script>
+        document.write('<label for="num1">Nhập số thứ nhất:</label>');
+    </script>
+    <input type="number" id="num1" placeholder="Nhập số thứ nhất" min="-100" max="100" oninput="checkLimit(this)">
+    <!-- Sử dụng document.write() để hiển thị nhãn -->
+    <script>
+        document.write('<label for="num2">Nhập số thứ hai:</label>');
+    </script>
+    <input type="number" id="num2" placeholder="Nhập số thứ hai" min="-100" max="100" oninput="checkLimit(this)">
+    <button onclick="calculate()">Tính tổng</button>
+    <p id="result"></p>
+</div>
+
+<script>
+    function calculate() {
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var num2 = parseFloat(document.getElementById('num2').value);
+        if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById('result').innerText = 'Vui lòng nhập đúng số.';
+        } else {
+            var sum = num1 + num2;
+            document.getElementById('result').innerText = 'Tổng: ' + sum;
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';
+        }
+    }
+
+    function checkLimit(input) {
+        var value = parseFloat(input.value);
+        var min = parseFloat(input.min);
+        var max = parseFloat(input.max);
+        
+        if (isNaN(value) || value < min || value > max) {
+            alert('Giá trị phải nằm trong khoảng từ ' + min + ' đến ' + max);
+            input.value = '';
+        }
+    }
+</script>
+
+</body>
+</html>

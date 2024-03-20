@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bai tap tuan 4</title>
+    <title>Document</title>
 </head>
 <body>
-   <div>
-    <a href="htttp://vnu.edu.vn">VietNam national university</a>
-    <br>
-    <a href="http://vnuis.edu.vn">International school - VNU</a>
-   </div>
+    <input type="text" id="hoten">
+    <button onclick="xinchao();">
+        HếLô AE
+    </button>
+    <script>
+        function xinchao(){
+            var hoten = document.getElementById('hoten').value;
+            alert('Xin chao' +  hoten);
+            alert('Chuc ban vui ve');
+        }
+    </script>
 </body>
 </html>
